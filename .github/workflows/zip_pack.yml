@@ -12,12 +12,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Get tag version
+        id: version
+        run: echo "VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+      
       - name: Zip templates
         run: |
           mkdir dist
-          zip -r dist/vanila.zip vanila
-          #zip -r dist/react.zip react
-          #zip -r dist/svelte.zip svelte
+#          zip -r "dist/vanila-${VERSION}.zip" vanila
+#          zip -r "dist/react-${VERSION}.zip" react
+#          zip -r "dist/svelte-${VERSION}.zip" svelte
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
@@ -25,8 +29,8 @@ jobs:
           name: Release ${{ github.ref_name }}
           tag_name: ${{ github.ref_name }}
           files: |
-            dist/vanila.zip
-            #dist/react.zip
-            #dist/svelte.zip
+            dist/vanila-${{ env.VERSION }}.zip
+#            dist/react-${{ env.VERSION }}.zip
+#            dist/svelte-${{ env.VERSION }}.zip
         env:
           GITHUB_TOKEN: ${{ secrets.CICD }}
