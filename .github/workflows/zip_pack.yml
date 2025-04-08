@@ -1,0 +1,32 @@
+name: Package and release templates
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Zip templates
+        run: |
+          mkdir dist
+          zip -r dist/vanila.zip vanila
+          #zip -r dist/react.zip react
+          #zip -r dist/svelte.zip svelte
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          name: Release ${{ github.ref_name }}
+          tag_name: ${{ github.ref_name }}
+          files: |
+            dist/vanila.zip
+            #dist/react.zip
+            #dist/svelte.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.CICD }}
