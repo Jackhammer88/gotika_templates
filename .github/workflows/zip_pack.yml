@@ -19,7 +19,7 @@ jobs:
       - name: Zip templates
         run: |
           mkdir dist
-          zip -r "dist/vanila-${VERSION}.zip" vanila
+          zip -r "dist/vanilla-${VERSION}.zip" vanilla
 #          zip -r "dist/react-${VERSION}.zip" react
 #          zip -r "dist/svelte-${VERSION}.zip" svelte
 
@@ -29,7 +29,7 @@ jobs:
           name: Release ${{ github.ref_name }}
           tag_name: ${{ github.ref_name }}
           files: |
-            dist/vanila-${{ env.VERSION }}.zip
+            dist/vanilla-${{ env.VERSION }}.zip
 #            dist/react-${{ env.VERSION }}.zip
 #            dist/svelte-${{ env.VERSION }}.zip
         env:
