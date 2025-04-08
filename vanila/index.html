@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css" media="screen" />
+    <title></title>
+</head>
+
+<body>
+    <div class="overlay">
+        <h1>Welcome, Hunter</h1>
+    </div>
+
+    <div class="boss-table">
+        <table>
+            <caption>Bloodborne bosses</caption>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Location</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Cleric Beast</td><td>Central Yharnam</td></tr>
+                <tr><td>Father Gascoigne</td><td>Central Yharnam</td></tr>
+                <tr><td>Blood-starved Beast</td><td>Old Yharnam</td></tr>
+                <tr><td>Vicar Amelia</td><td>Cathedral Ward</td></tr>
+                <tr><td>Witch of Hemwick</td><td>Hemwick Charnel Lane</td></tr>
+                <tr><td>Darkbeast Paarl</td><td>Yahar'gul Unseen Village</td></tr>
+                <tr><td>Shadows of Yharnam</td><td>Forbidden Woods</td></tr>
+                <tr><td>Rom, the Vacuous Spider</td><td>Byrgenwerth</td></tr>
+                <tr><td>The One Reborn</td><td>Yahar'gul, The Unseen Village</td></tr>
+                <tr><td>Micolash, Host of the Nightmare</td><td>Nightmare of Mensis</td></tr>
+                <tr><td>Mergo's Wet Nurse</td><td>Nightmare of Mensis</td></tr>
+                <tr><td>Amygdala</td><td>Nightmare Frontier</td></tr>
+                <tr><td>Celestial Emissary</td><td>Upper Cathedral Ward</td></tr>
+                <tr><td>Ebritas, Daughter of the Cosmos</td><td>Upper Cathedral Ward</td></tr>
+                <tr><td>Martyr Logarius</td><td>Cainhurst Castle</td></tr>
+                <tr><td>Gehrman, the First Hunter</td><td>Hunter's Dream</td></tr>
+                <tr><td>Moon Presence</td><td>Hunter's Dream</td></tr>
+            </tbody>
+            
+        </table>
+    </div>
+
+    <div class="input-group">
+        <input type="text" id="hunter-name" placeholder="Enter your name..." />
+        <button id="input-button" onclick="onClick()">Join the Hunt</button>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        function onClick() {
+            const name = document.getElementById("hunter-name").value;
+            alert(`Welcome to the hunt, ${name}`);
+        }
+    </script>
+</body>
+
+</html>
