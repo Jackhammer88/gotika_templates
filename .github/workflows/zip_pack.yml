@@ -19,7 +19,7 @@ jobs:
       - name: Zip templates
         run: |
           mkdir dist
-#          zip -r "dist/vanila-${VERSION}.zip" vanila
+          zip -r "dist/vanila-${VERSION}.zip" vanila
 #          zip -r "dist/react-${VERSION}.zip" react
 #          zip -r "dist/svelte-${VERSION}.zip" svelte
 
